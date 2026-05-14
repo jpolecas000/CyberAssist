@@ -6,4 +6,4 @@ const button = index.html.getElementById("test_Button");
  function handleButtonClicks() {
       alert("Button clicked!");
     }
-button.addEventListener("click", handleButtonClicks());
+button.addEventListener("click", handleButtonClicks);
