@@ -96,3 +96,20 @@ button:hover {
     font-weight: bold;
     display: none;
 }
+
+
+.redirect-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.redirect-text a {
+    color: #0066ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.redirect-text a:hover {
+    text-decoration: underline;
+}
