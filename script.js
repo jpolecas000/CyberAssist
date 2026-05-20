@@ -9,7 +9,7 @@ function handleButtonClicks(buttonId) {
 };
 
 document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent page reload
+            e.preventDefault();
             
             const submitBtn = document.getElementById('submitBtn');
             const messageDiv = document.getElementById('message');
