@@ -1,39 +1,53 @@
-<!Doctype HTML>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Cyber Assist Home</title>
-     <link rel="logo favicon" href="CyberAssist Logo.png">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <h1>Cyber Assist</h1>
-  </body>
-  <section id="Nav_Tabs">
-<a  id="appointment" href="appointmentForm.html">Book An Appointment</a>
-<nav id="aboutUs" href="aboutUs.html">About Us</nav>
-<nav href="help.html">Common Help</nav>
-  </section>
-  <section id="Img_person">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Assist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  </section>
-  <section id="john">
+    <header class="cyber-header">
+        <div class="header-top">
+            <h1 class="logo-text"><span class="blue-text">Cyber</span> <span class="yellow-text">ASSIST</span></h1>
+            <div class="logo-icon">
+                <div class="shield-placeholder"></div>
+            </div>
+        </div>
+        <nav class="cyber-nav">
+            <a href="#about" class="nav-tab">About Us</a>
+            <a href="#help" class="nav-tab">Help</a>
+            <a href="#appointment" class="nav-tab">Appointment</a>
+        </nav>
+    </header>
 
-  </section>
-  <section id="albert">
-<button id="test_Button">Click to Test</button>
-  </section>
-  <footer id="slideshow">
-   <a id="slideshow" href="https://docs.google.com/presentation/d/1v8EEUA0HAZ3FWXdHSSKwqxOSVj6NNitkEJsPAiyG5zw/edit?usp=sharing" style="font-family: Times New Roman, Times, serif;
-font-size: 9px;
-letter-spacing: 0px;
-word-spacing: 2px;
-color: #e0e0e0;
-font-weight: normal;
-text-decoration: none;
-font-style: italic;
-font-variant: normal;
-text-transform: none;">No Errors Found</a>
-  </footer>
+    <main class="content-container">
+        
+        <section class="profile-section">
+            <div class="profile-card card-me">
+                <h2>Me</h2>
+                <p>Information about the provider or system assistant goes here.</p>
+            </div>
+            <div class="profile-card card-you">
+                <h2>You</h2>
+                <p>Information personalized for the user, client portal details, or status goes here.</p>
+            </div>
+        </section>
+
+        <section class="packages-section">
+            <h2>Packages</h2>
+            <p>Explore our available service tiers and cybersecurity support bundles.</p>
+        </section>
+
+        <section class="calendar-section">
+            <h2>Availability Calendar</h2>
+            <div class="calendar-placeholder">
+                <p>Select a time to book an appointment...</p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
 </html>

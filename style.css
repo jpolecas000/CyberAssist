@@ -1,3 +1,169 @@
+/* --- Base Reset & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #e5e5e5; /* The light gray background from the screenshot */
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* --- Cyber Header (Screenshot 1) --- */
+.cyber-header {
+    background-color: #b0b5b9; /* Metallic gray top bar */
+    border-bottom: 5px solid #000000;
+    position: relative;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #cbd1d6;
+    /* Cuts the right edge diagonally like the image */
+    clip-path: polygon(0 0, 75% 0, 80% 100%, 0% 100%); 
+}
+
+/* Fun stylized text mimicking the drawing */
+.logo-text {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.blue-text {
+    color: #2b579a;
+    font-family: 'Impact', sans-serif;
+}
+
+.yellow-text {
+    color: #f1c40f;
+    -webkit-text-stroke: 1px #888;
+}
+
+/* Simulated Right Corner Shield Logo Space */
+.logo-icon {
+    position: absolute;
+    right: 5%;
+    top: 10px;
+    width: 70px;
+    height: 70px;
+    background: #a3c2e0;
+    border-radius: 50%;
+    border: 3px solid #2b579a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Yellow Accent Bar & Custom Tabs Bar */
+.cyber-nav {
+    background-color: #f39c12; /* Distinct yellow/orange background band */
+    display: flex;
+    gap: 15px;
+    padding-left: 20px;
+    height: 50px;
+    align-items: flex-end;
+}
+
+/* Custom Trapezoid Tabs using clip-path */
+.nav-tab {
+    display: inline-block;
+    background-color: #e5e5e5;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 30px;
+    font-size: 0.9rem;
+    border: 3px solid #000;
+    border-bottom: none;
+    /* This creates the angular trapezoid tab effect */
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    transition: background 0.2s ease;
+}
+
+.nav-tab:hover {
+    background-color: #fff;
+}
+
+
+/* --- Main Content Layout (Screenshot 2 Wireframe) --- */
+.content-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* "Me" and "You" Side-by-Side Cards */
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.profile-card {
+    background: #fff;
+    border: 3px solid #000;
+    padding: 30px;
+    flex: 1;
+    min-height: 200px;
+    box-shadow: 5px 5px 0px #000;
+}
+
+/* Organic / Slightly Slanted Box Cuts matching the green wireframe shapes */
+.card-me {
+    border-radius: 12px;
+}
+
+.card-you {
+    /* Angled box variant */
+    clip-path: polygon(0 0, 100% 10%, 90% 100%, 0% 90%);
+    background: #fafafa;
+    border-radius: 4px;
+}
+
+/* Slanted "Packages" Ribbon Bar */
+.packages-section {
+    background: #fff;
+    border: 3px solid #000;
+    padding: 25px;
+    color: #000;
+    /* Creates the parallelogram style from the wireframe drawing */
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    box-shadow: 4px 4px 0px #f39c12;
+}
+
+.packages-section h2, .profile-card h2, .calendar-section h2 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Availability Calendar Container */
+.calendar-section {
+    background: #fff;
+    border: 3px solid #000;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.calendar-placeholder {
+    margin-top: 15px;
+    background: #f9f9f9;
+    border: 2px dashed #b0b5b9;
+    padding: 40px;
+    text-align: center;
+    color: #666;
+}
 selector {
     font-family: "Oswald", "Ariel", generic-family;
 }
