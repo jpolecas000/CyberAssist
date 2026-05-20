@@ -50,38 +50,4 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
             });
         });
 
-        document.addEventListener("DOMContentLoaded", () => {
-    const loginForm = document.getElementById("loginForm");
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
-    
-    const usernameError = document.getElementById("usernameError");
-    const passwordError = document.getElementById("passwordError");
-    const successMessage = document.getElementById("successMessage");
-
-    loginForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-        usernameError.textContent = "";
-        passwordError.textContent = "";
-        successMessage.style.display = "none";
-        
-        let isValid = true;
-        const usernameVal = usernameInput.value.trim();
-        const passwordVal = passwordInput.value.trim();
-        if (usernameVal === "") {
-            usernameError.textContent = "Username is required.";
-            isValid = false;
-        }
-
-        if (passwordVal === "") {
-            passwordError.textContent = "Password is required.";
-            isValid = false;
-        }
-        if (isValid) {
-            window.alert(`Sucessfully signed in as ${document.getElementById('email')}!`);
-            successMessage.textContent = `Welcome, ${usernameVal}! Login successful.`;
-            successMessage.style.display = "block";
-            loginForm.reset();
-        }
-    });
-});
+       

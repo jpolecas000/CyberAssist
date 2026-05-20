@@ -64,17 +64,33 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // If all fields pass validation
-        if (isValid) {
-            // Simulate a successful registration database write
-            successMessage.textContent = "Registration successful! Redirecting...";
+       // Replace the old "if (isValid)" block in public/signup.js with this:
+if (isValid) {
+    // Send registration data to the backend Node server
+    fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fullName: nameVal, email: emailVal, password: passwordVal })
+    })
+    .then(response => response.json().then(data => ({ status: response.status, body: data })))
+    .then(res => {
+        if (res.status === 201) {
+            successMessage.textContent = res.body.message + " Redirecting to login...";
             successMessage.style.display = "block";
-            
             signupForm.reset();
-
-            // Optional: Redirect to login page after 2 seconds
+            
             setTimeout(() => {
                 window.location.href = "index.html";
             }, 2000);
+        } else {
+            // Display errors returned by server (e.g. email already exists)
+            emailError.textContent = res.body.message;
         }
+    })
+    .catch(error => {
+        console.error("Error signing up:", error);
+        emailError.textContent = "Server communication failure.";
+    });
+}
     });
 });

@@ -32,14 +32,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // If everything is valid, simulate a successful login
-        if (isValid) {
-            // In a real app, you would send this data to your backend server here using fetch() or an XMLHttpRequest
-            
-            successMessage.textContent = `Welcome, ${usernameVal}! Login successful.`;
+       // Replace the old "if (isValid)" block in public/script.js with this:
+if (isValid) {
+    // Send data to the backend Node server
+    fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: usernameVal, password: passwordVal })
+    })
+    .then(response => response.json().then(data => ({ status: response.status, body: data })))
+    .then(res => {
+        if (res.status === 200) {
+            successMessage.textContent = res.body.message;
             successMessage.style.display = "block";
-            
-            // Optional: clear the form
             loginForm.reset();
+        } else {
+            // Handle server-side errors (e.g. wrong password)
+            usernameError.textContent = res.body.message;
         }
+    })
+    .catch(error => {
+        console.error("Error logging in:", error);
+        usernameError.textContent = "Something went wrong. Is the server running?";
+    });
+}
     });
 });
