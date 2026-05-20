@@ -1,4 +1,4 @@
-var apointments = {};
+var appointments = {};
 let user;
 const button = index.html.getElementById("test_Button");
 button.addEventListener("click", function() {
@@ -46,6 +46,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
             .finally(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerText = "Check Availability & Book";
+                appointments[document.getElementById('name')] = true;
             });
         });
 
@@ -77,6 +78,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
             isValid = false;
         }
         if (isValid) {
+            window.alert(`Sucessfully signed in as ${document.getElementById('email')}!`);
             successMessage.textContent = `Welcome, ${usernameVal}! Login successful.`;
             successMessage.style.display = "block";
             loginForm.reset();
