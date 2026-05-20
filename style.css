@@ -1,3 +1,98 @@
 selector {
     font-family: "Oswald", "Ariel", generic-family;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    color: #777;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #0066ff;
+}
+
+.error-message {
+    color: #ff3333;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    height: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0052cc;
+}
+
+.success-message {
+    color: #28a745 !important;
+    margin-top: 20px;
+    font-weight: bold;
+    display: none;
+}
