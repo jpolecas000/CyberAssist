@@ -40,7 +40,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
                 }
             })
             .catch(error => {
-                messageDiv.innerText = "An error occurred. Please try again.";
+                messageDiv.innerText = "An error occurred. Please reload using the clockwise arrow.";
                 messageDiv.className = 'error';
             })
             .finally(() => {
