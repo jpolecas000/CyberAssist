@@ -8,10 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const successMessage = document.getElementById("successMessage");
 
     loginForm.addEventListener("submit", function(event) {
-        // Prevent the default form submission behavior (page reload)
         event.preventDefault();
-
-        // Clear previous messages
         usernameError.textContent = "";
         passwordError.textContent = "";
         successMessage.style.display = "none";
@@ -19,8 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let isValid = true;
         const usernameVal = usernameInput.value.trim();
         const passwordVal = passwordInput.value.trim();
-
-        // Basic Validation
         if (usernameVal === "") {
             usernameError.textContent = "Username is required.";
             isValid = false;
@@ -34,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // If everything is valid, simulate a successful login
        // Replace the old "if (isValid)" block in public/script.js with this:
 if (isValid) {
+    window.alert("Successfully logged in!")
     // Send data to the backend Node server
     fetch('/api/login', {
         method: 'POST',
@@ -53,7 +49,7 @@ if (isValid) {
     })
     .catch(error => {
         console.error("Error logging in:", error);
-        usernameError.textContent = "Something went wrong. Is the server running?";
+        usernameError.textContent = "Something went wrong. Please Reload.";
     });
 }
     });

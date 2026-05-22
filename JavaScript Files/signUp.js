@@ -44,13 +44,33 @@ document.addEventListener("DOMContentLoaded", () => {
             emailError.textContent = "Please enter a valid email address.";
             isValid = false;
         }
-
-        // Validate Password length
         if (passwordVal === "") {
             passwordError.textContent = "Password is required.";
             isValid = false;
-        } else if (passwordVal.length < 6) {
-            passwordError.textContent = "Password must be at least 6 characters.";
+        } else if (passwordVal.length < 8) {
+            passwordError.textContent = "Password must be at least 8 characters.";
+            isValid = false;
+        }
+        let hasCapital = false;
+        let capital = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        for (let letter of capital) {
+        if (passwordVal.includes(letter)) {
+            hasCapital = true;
+        }
+        }
+        if (!hasCapital) {
+             passwordError.textContent = "Password should contain at least 1 capital letter";
+            isValid = false;
+        }
+         let hasNumber = false;
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        for (let number of numbers) {
+        if (passwordVal.includes(String(number))) {
+            hasNumber = true;
+        }
+        }
+        if (!hasNumber) {
+             passwordError.textContent = "Password should contain at least 1 number";
             isValid = false;
         }
 
