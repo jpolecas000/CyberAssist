@@ -14,6 +14,155 @@ body {
   --muted: #495670;
 }
 
+#nav_bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border-bottom: 1px solid rgba(0, 35, 102, 0.12);
+  box-shadow: 0 6px 24px rgba(17, 32, 76, 0.06);
+}
+
+#nav_bar a {
+  color: var(--primary);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: #ffffff;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+#nav_bar a:hover {
+  background: rgba(0, 35, 102, 0.08);
+  transform: translateY(-1px);
+}
+
+.login-container,
+#About-Our-Team,
+form,
+.tab-content,
+.card,
+footer {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+  max-width: 420px;
+  margin: 52px auto;
+  background: var(--surface-alt);
+  padding: 28px 28px 32px;
+  border-radius: 24px;
+  box-shadow: 0 22px 55px rgba(17, 32, 76, 0.10);
+}
+
+.login-container h2,
+.login-container p,
+.login-container label,
+.login-container .redirect-text,
+#About-Our-Team h4,
+#About-Our-Team h5 {
+  color: var(--primary);
+}
+
+.login-container p,
+.login-container .redirect-text,
+.login-container .error-message,
+.login-container .success-message {
+  color: var(--muted);
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 35, 102, 0.14);
+  border-radius: 14px;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(0, 35, 102, 0.08);
+}
+
+.error-message {
+  display: block;
+  margin-top: 8px;
+  color: #b00020;
+  font-size: 0.95rem;
+}
+
+.success-message {
+  color: #217a18;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.redirect-text {
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+.redirect-text a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+#message {
+  margin-top: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+iframe {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 18px;
+  margin-top: 24px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--primary);
+}
+
 header {
   background: linear-gradient(135deg, rgba(0,35,102,0.95), rgba(212,175,55,0.9));
   color: white;
