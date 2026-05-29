@@ -6,8 +6,8 @@ const PORT = 3000;
 // Middleware to parse JSON payloads from frontend requests
 app.use(express.json());
 
-// Serve static files (HTML, CSS, JS) from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files (HTML, CSS, JS) from the project root directory
+app.use(express.static(path.join(__dirname)));
 
 // In-memory user "database" (Resets every time the server restarts)
 // WARNING: In production, use a real database and NEVER store passwords in plain text! Hashing (e.g., bcrypt) is mandatory.

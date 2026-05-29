@@ -84,8 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // If all fields pass validation
-       // Replace the old "if (isValid)" block in public/signup.js with this:
-if (isValid) {
+        if (isValid) {
     // Send registration data to the backend Node server
     fetch('/api/signup', {
         method: 'POST',
