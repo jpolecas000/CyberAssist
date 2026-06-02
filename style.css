@@ -5,12 +5,13 @@ body {
   color: #1f2a44;
   justify-content: center;
 }
- div{
+
+div{
   display: flex;
   justify-content: center;
-  shadow: 0 22px 55px rgba(17, 32, 76, 0.10);
-  rounded: 24px;
- }
+  box-shadow: 0 22px 55px rgba(17, 32, 76, 0.10);
+  outline: 24px;
+}
 
 :root {
   --primary: #002366; 
