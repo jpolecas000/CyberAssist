@@ -164,8 +164,7 @@ h1, h2, h3, h4, h5 {
 }
 
 header {
-  background-image: url("https://www.shutterstock.com/image-vector/younger-person-helping-elderly-woman-260nw-2669012279.jpg") no-repeat center/cover;
-  color: white;
+  background-image: url("https://www.shutterstock.com/image-vector/younger-person-helping-elderly-woman-260nw-2669012279.jpg");
   padding: 24px 32px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
   opacity: 0.92.5;
