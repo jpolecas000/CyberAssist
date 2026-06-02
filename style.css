@@ -6,7 +6,7 @@ body {
   justify-content: center;
 }
 
-div{
+main {
   display: flex;
   justify-content: center;
   box-shadow: 0 22px 55px rgba(17, 32, 76, 0.10);
