@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background:#1f2a44;
-  color: #1f2a44;
+  color: #d4af37;
   justify-content: center;
 }
 
@@ -19,7 +19,7 @@ main {
   --accent: #d4af37;
   --surface: #e8ebf1; 
   --surface-alt: #ffffff;
-  --text: #1f2a44;
+  --text: #d4af37;
   --muted: #495670;
 }
 
