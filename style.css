@@ -63,7 +63,7 @@ form,
 .tab-content,
 .card,
 footer {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: system-ui, "Segoe UI", Tahoma, "Geneva", Verdana, sans-serif;
 }
 
 .login-container {
@@ -183,7 +183,7 @@ h1, h2, h3, h4, h5 {
 header {
   background-image: url("https://www.shutterstock.com/image-vector/younger-person-helping-elderly-woman-260nw-2669012279.jpg");
   padding: 24px 32px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 18px rgba(223, 208, 8, 0.925);
   opacity: 0.92.5;
 }
 
@@ -232,14 +232,14 @@ main {
 .tab.active,
 .tab:focus-visible {
   background: var(--primary);
-  color: #ffffff;
+  color: #a39c9c;
   border-color: rgba(212, 175, 55, 0.8);
   box-shadow: 0 6px 18px rgba(0, 35, 102, 0.18);
 }
 
 .tab-content {
   margin-top: 24px;
-  background: white;
+  background: rgb(180, 169, 169);
   border-radius: 18px;
   border: 1px solid rgba(0, 35, 102, 0.12);
   padding: 28px;
