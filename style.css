@@ -1,9 +1,9 @@
 body {
-  font-family:Georgia
+  font-family:Georgia;
   line-height: 1.3; /*-- A good rule for line height is to be 1.2 - 1.5. Generally works for most website applications.*/
   margin: 20; /* Margin is side to side space */
   padding: 10; /* padding is space on all sides */
-  background-color: #d4af37;
+  background-color: #a7a49e;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
@@ -48,7 +48,7 @@ section {
   padding: 10px 18px;
   border-radius: 999px;
   font-weight: 700;
-  background: #ffffff;
+  background: #dfd002;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
