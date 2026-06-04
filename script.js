@@ -1,9 +1,3 @@
-const appointments = {};
-
-function handleButtonClicks(buttonId) {
-    alert(`Clicked ${buttonId}`);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const button = document.getElementById('test_Button');
     if (button) {
