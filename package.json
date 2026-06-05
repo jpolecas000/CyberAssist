@@ -1,0 +1,28 @@
+{
+  "name": "cyberassist",
+  "version": "1.0.0",
+  "description": "View this site at https://jpolecas000.github.io/CyberAssist/",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpolecas000/CyberAssist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jpolecas000/CyberAssist/issues"
+  },
+  "homepage": "https://github.com/jpolecas000/CyberAssist#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}
