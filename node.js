@@ -3,6 +3,8 @@ require('dotenv').config();
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const uri = process.env.MONGODB_URI;
+const dbName = process.env.MONGODB_DB || 'cyberassist';
+const collectionName = process.env.MONGODB_COLLECTION || 'users';
 if (!uri) {
   throw new Error('Missing MONGODB_URI in environment. Add it to your .env file.');
 }
@@ -20,9 +22,12 @@ async function run() {
   try {
     // Connect the client to the server (optional starting in v4.7)
     await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db('admin').command({ ping: 1 });
-    console.log('Pinged your deployment. You successfully connected to MongoDB!');
+    // Send a ping to confirm a successful connection on the intended database
+    const db = client.db(dbName);
+    await db.command({ ping: 1 });
+    const collection = db.collection(collectionName);
+    console.log(`Pinged your deployment and verified the '${dbName}' database connection using the '${collectionName}' collection.`);
+    console.log(`Resolved collection: ${collection.namespace}`);
   } catch (err) {
     console.error('MongoDB connection failed:', err);
     process.exit(1);
