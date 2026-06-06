@@ -19,38 +19,37 @@ document.addEventListener('DOMContentLoaded', () => {
         messageDiv.className = '';
         messageDiv.innerText = '';
 
+        const user = JSON.parse(localStorage.getItem('cyberassistUser') || null);
         const data = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
+            name: user?.name || document.getElementById('name').value,
+            email: user?.email || document.getElementById('email').value,
             date: document.getElementById('date').value,
             time: document.getElementById('time').value,
             packages: document.getElementById('options').value
         };
 
-        const webAppUrl = 'https://script.google.com/macros/s/AKfycbxut9y8QlTKj_8_g3rsoNvGb74cjy-lH02n72XEjyYS0Sc8n4Q1BrgPMusco2Lle5zI/exec';
-        fetch(webAppUrl, {
+        fetch('/api/appointments', {
             method: 'POST',
-            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         })
-            .then(response => response.json())
+            .then(response => response.json().then(data => ({ status: response.status, body: data })))
             .then(result => {
-                messageDiv.innerText = result.message;
-                messageDiv.className = result.status === 'success' ? 'success' : 'error';
+                messageDiv.innerText = result.body.message;
+                messageDiv.className = result.status === 201 ? 'success' : 'error';
 
-                if (result.status === 'success') {
+                if (result.status === 201) {
                     bookingForm.reset();
                 }
             })
             .catch(error => {
-                messageDiv.innerText = 'An error occurred. Please reload using the clockwise arrow.';
+                messageDiv.innerText = 'An error occurred while booking your appointment.';
                 messageDiv.className = 'error';
                 console.error(error);
             })
             .finally(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerText = 'Check Availability & Book';
-                appointments[data.name] = true;
             });
     });
 });

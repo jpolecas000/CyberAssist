@@ -26,31 +26,30 @@ document.addEventListener("DOMContentLoaded", () => {
             isValid = false;
         }
 
-        // If everything is valid, simulate a successful login
-       // Replace the old "if (isValid)" block in public/script.js with this:
-if (isValid) {
-    window.alert("Successfully logged in!")
-    // Send data to the backend Node server
-    fetch('/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: usernameVal, password: passwordVal })
-    })
-    .then(response => response.json().then(data => ({ status: response.status, body: data })))
-    .then(res => {
-        if (res.status === 200) {
-            successMessage.textContent = res.body.message;
-            successMessage.style.display = "block";
-            loginForm.reset();
-        } else {
-            // Handle server-side errors (e.g. wrong password)
-            usernameError.textContent = res.body.message;
-        }
-    })
-    .catch(error => {
-        console.error("Error logging in:", error);
-        usernameError.textContent = "Something went wrong. Please Reload.";
-    });
-}
+        // If everything is valid, submit the login request to the server
+    if (isValid) {
+        fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: usernameVal, password: passwordVal })
+        })
+        .then(response => response.json().then(data => ({ status: response.status, body: data })))
+        .then(res => {
+            if (res.status === 200) {
+                successMessage.textContent = res.body.message;
+                successMessage.style.display = "block";
+                localStorage.setItem('cyberassistUser', JSON.stringify(res.body.user));
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 800);
+            } else {
+                usernameError.textContent = res.body.message;
+            }
+        })
+        .catch(error => {
+            console.error("Error logging in:", error);
+            usernameError.textContent = "Something went wrong. Please Reload.";
+        });
+    }
     });
 });

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Cyber Assist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="nav_bar">
+      <a href="index.html">Home</a>
+      <a href="aboutUs.html">About Us</a>
+      <a href="learn.html">Learn</a>
+      <a href="loginPage.html">Login/Sign Up</a>
+      <a href="appointmentForm.html">Book an Appointment</a>
+    </div>
+
+    <main>
+      <section class="login-container">
+        <h2 id="greeting">Welcome back!</h2>
+        <div id="appointmentCard" class="card">
+          <h3>Your next appointment</h3>
+          <p id="appointmentMessage">Loading appointment details...</p>
+          <div id="appointmentDetails" style="display:none; text-align:left; margin-top:1rem;">
+            <p><strong>Name:</strong> <span id="apptName"></span></p>
+            <p><strong>Email:</strong> <span id="apptEmail"></span></p>
+            <p><strong>Date:</strong> <span id="apptDate"></span></p>
+            <p><strong>Time:</strong> <span id="apptTime"></span></p>
+            <p><strong>Package:</strong> <span id="apptPackage"></span></p>
+          </div>
+        </div>
+        <div class="input-group" style="margin-top:1rem;">
+          <a class="button" href="appointmentForm.html">Book a New Appointment</a>
+          <button id="logoutBtn" class="button" style="background:#333; margin-top:1rem; width:auto;">Log Out</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
