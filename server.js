@@ -6,14 +6,14 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017';
 const dbName = process.env.MONGODB_DB || 'cyberassist';
 const userCollectionName = process.env.MONGODB_COLLECTION || 'users';
 const appointmentCollectionName = process.env.MONGODB_APPOINTMENT_COLLECTION || 'appointments';
 const SALT_ROUNDS = 10;
 
-if (!uri) {
-    throw new Error('Missing MONGODB_URI in environment. Add it to your .env file.');
+if (!process.env.MONGODB_URI) {
+    console.log('No MONGODB_URI configured; using local MongoDB at mongodb://127.0.0.1:27017');
 }
 
 const client = new MongoClient(uri, {
